@@ -79,6 +79,27 @@ body {
   min-height: 100vh; }
 
 /* - COMPONENTS FOLDER FILES - */
+/* ------------------------------------------- */
+/* COMPONENTS-1 FOR HEADER OF THE TRILLO APP
+/* ------------------------------------------- */
+/* --- LOGO --- */
+.logo {
+  height: 3.25rem; }
+
+/* --- SEARCH BOX --- */
+.search__icon {
+  height: 2rem;
+  width: 2rem; }
+
+/* --- USER NAVIGATION --- */
+.user-nav__icon {
+  height: 2.25rem;
+  width: 2.25rem; }
+
+.user-nav__user-photo {
+  height: 3.75rem;
+  border-radius: 50%; }
+
 /* - LAYOUT FOLDER FILES - */
 /* ------------------------------------------- */
 /* HOTEL VIEW | LAYOUT / PAGE

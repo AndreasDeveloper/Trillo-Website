@@ -17,10 +17,48 @@
 
     </head>
     <body>
+
         <div class="container">
+            <!-- USER NAVIGATION TOP SETUP STARTS | USER CONTAINER TOP |-->
             <header class="header">
-                Header Part
+                <img src="resources/images/logo.png" alt="Trillo Logo" class="logo">
+
+                <!-- SEARCH BAR SETUP STARTS -->
+                <form action="#" class="search">
+                    <input type="text" class="search__input" placeholder="Search Hotels">
+                    <button class="search__button">
+                        <svg class="search__icon">
+                           <use xlink:href="resources/images/sprite.svg#icon-magnifying-glass"></use>
+                        </svg>
+                    </button>
+                </form>
+                <!-- SEARCH BAR SETUP ENDS -->
+
+                <!-- USER NAVIGATION TOP STARTS | BOOKMARS, CHAT, PROFILE -->
+                <nav class="user-nav">
+                    <div class="user-nav__icon-box">
+                        <svg class="user-nav__icon">
+                            <use xlink:href="resources/images/sprite.svg#icon-bookmark"></use>
+                        </svg>
+                        <span class="user-nav__notification">7</span>
+                    </div>
+
+                    <div class="user-nav__icon-box">
+                        <svg class="user-nav__icon">
+                            <use xlink:href="resources/images/sprite.svg#icon-chat"></use>
+                        </svg>
+                        <span class="user-nav__notification">16</span>
+                    </div>
+                    <div class="user-nav__user">
+                        <img src="resources/images/user.jpg" alt="User Photo" class="user-nav__user-photo">
+                        <span class="user-nav__user-name">Jonas</span>
+                    </div>
+                </nav>
+                <!-- USER NAVIGATION TOP ENDS| BOOKMARS, CHAT, PROFILE -->
             </header>
+            <!-- USER NAVIGATION TOP SETUP ENDS| USER CONTAINER TOP |-->
+
+            <!-- SIDEBAR NAVIGATION STARTS -->
             <div class="content">
                 <nav class="sidebar">
                     Navigation
@@ -29,6 +67,7 @@
                     Hotel View
                 </main>
             </div>
+            <!-- SIDEBAR NAVIGATION ENDS -->
         </div>
     </body>
 
