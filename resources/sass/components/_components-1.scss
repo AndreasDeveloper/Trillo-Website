@@ -6,22 +6,63 @@
 /* --- LOGO --- */
 .logo {
     height: 3.25rem;
+    margin-left: 2rem;
 }
 
 /* --- SEARCH BOX --- */
 .search {
 
-    &__input {
+    flex: 0 0 40%;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__input {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: var(--color-grey-light-1);
+        border: none;
+        padding: .7rem 2rem;
+        border-radius: 10rem;
+        width: 90%;
+        transition: all .2s;
+        margin-right: -3.25rem;
+
+        &:focus {
+            outline: none;
+            width: 100%;        // WHEN ELEMENT IS FOCUSED (CLICKED) IT WILL EXTENED. 
+            background-color: var(--color-grey-light-2);
+        }
+
+        &::-webkit-input-placeholder {
+            font-weight: 100;
+            color: var(--color-grey-light-5);
+        }
+    }
+
+    &__input:focus + &__button {
+        background-color: var(--color-grey-light-2);
     }
 
     &__button {
+        border: none;
+        background-color: var(--color-grey-light-1);
 
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            transform: translateY(.2rem);
+        }
     }
 
     &__icon {
         height: 2rem;
         width: 2rem;
+        fill: var(--color-grey-dark-1);
     }
 }
 
@@ -31,29 +72,53 @@
 /* --- USER NAVIGATION --- */
 .user-nav {
 
-    &__icon-box {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
 
+    & > * {
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    & > *:hover {
+        background-color: var(--color-grey-light-1);
+    }
+
+    &__icon-box {
+        position: relative;
     }
 
     &__icon {
         height: 2.25rem;
         width: 2.25rem;
+        fill: var(--color-grey-light-5);
     }
 
     &__notification {
+        font-size: .8rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        position: absolute;
+        top: 1.5rem;
+        right: 1.1rem;
 
-    }
-
-    &__user {
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__user-photo {
         height: 3.75rem;
         border-radius: 50%;
+        margin-right: 1rem;
     }
 
-    &__user-name {
-
-    }
+    // USER and USER-NAME DOESN'T NEED ANY STYLING. THEY'RE STILED IN GLOBAL ELEMENT : & > *
 }
