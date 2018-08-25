@@ -30,10 +30,18 @@
     background-color: var(--color-grey-dark-3);
 
     flex: 0 0 18%;      // Starts from Growth, Shrink and Basis at the end/Width \\
+
+    // IN ORDER FOR Y AXIS TO WORK. PARENT ELEMENT NEEDS TO INCLUDE DISPLAY AS FLEX, AND FLEX DIRECTION AS COLUMN \\
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .hotel-view {
     background-color: var(--color-white);
+
+    // TEST
+    height: 80rem;
 
     flex: 1;
 }

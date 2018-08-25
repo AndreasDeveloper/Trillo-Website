@@ -2,6 +2,9 @@
 /* COMPONENTS-1 FOR HEADER OF THE TRILLO APP
 /* ------------------------------------------- */
 
+/* ------------------------------------------- */
+// TOP NAVIGATION / UI \\
+/* ------------------------------------------- */
 
 /* --- LOGO --- */
 .logo {
@@ -121,4 +124,84 @@
     }
 
     // USER and USER-NAME DOESN'T NEED ANY STYLING. THEY'RE STILED IN GLOBAL ELEMENT : & > *
+}
+
+/* ------------------------------------------- */
+// SIDE NAVIGATION / UI
+/* ------------------------------------------- */
+
+.side-nav {
+
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 3.5rem;
+
+    &__item {
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
+
+    &__item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: .3rem;
+        background-color: var(--color-primary);
+        transform: scaleY(0);
+        transition: transform .2s, 
+                    width .4s cubic-bezier(1,0,0,1) .2s, // DELAY MAKES ANIMATION TO SHINE (DELAY IS width .4s .2s) // CUBIC-BEZIER CONTROLS THE ANIMATION LENGTH/ACTUAL MOVEMENT
+                    background-color: .1s; 
+
+        //transform-origin: bottom;     // MAKES THE ::BEFORE or ::AFTER ELEMENTS TO SCALE FROM DIFFERENT POSITIONS. | BOTTOM/TOP/LEFT/RIGHT |
+    }
+
+    &__item:hover::before,
+    &__item--active::before {       // ACTIVE STATE MAKES THE ELEMENT ALREADY SELECTED
+        transform: scaleY(1);
+        width: 100%;
+    }
+
+    &__item:active::before {
+        background-color: var(--color-primary-light);
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            color: var(--color-grey-light-3);
+            text-decoration: none;
+            text-transform: uppercase;
+            display: block;
+            padding: 1.5rem 3rem;
+            position: relative;
+            z-index: 10;
+
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-right: 2rem;
+        fill: currentColor;     // COLOR OF PARENT ELEMENT \\
+    }
+}
+
+
+/* ------------------------------------------- */
+// LEGAL TEXT IN SIDE NAVIGATION
+/* ------------------------------------------- */
+
+.legal {
+    font-size: 1.2rem;
+    color: var(--color-grey-light-6);
+    text-align: center;
+    padding: 2.5rem;
 }
