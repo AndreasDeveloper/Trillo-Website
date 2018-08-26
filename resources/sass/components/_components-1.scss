@@ -155,7 +155,7 @@
         transform: scaleY(0);
         transition: transform .2s, 
                     width .4s cubic-bezier(1,0,0,1) .2s, // DELAY MAKES ANIMATION TO SHINE (DELAY IS width .4s .2s) // CUBIC-BEZIER CONTROLS THE ANIMATION LENGTH/ACTUAL MOVEMENT
-                    background-color: .1s; 
+                    background-color .1s; 
 
         //transform-origin: bottom;     // MAKES THE ::BEFORE or ::AFTER ELEMENTS TO SCALE FROM DIFFERENT POSITIONS. | BOTTOM/TOP/LEFT/RIGHT |
     }
@@ -204,4 +204,83 @@
     color: var(--color-grey-light-6);
     text-align: center;
     padding: 2.5rem;
+}
+
+
+/* ------------------------------------------- */
+// HOTE VIEW - GALLERY
+/* ------------------------------------------- */
+
+.gallery {
+
+    display: flex;
+
+    &__photo {
+        width: 100%;
+        display: block;
+    }
+}
+
+/* ------------------------------------------- */
+// HOTE VIEW - OVERVIEW
+/* ------------------------------------------- */
+.overview {
+
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--color-grey-light-4);
+
+    &__heading {
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
+    }
+
+    &__stars {
+        margin-right: auto;
+        display: flex;
+    }
+
+    &__icon-star,
+    &__icon-location {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary);
+    }
+
+    &__location {
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    &__icon-location {
+        margin-right: .5rem;
+    }
+
+    &__rating {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        margin-left: 3rem;
+        padding: 0 2.25rem;
+        align-self: stretch;    // STRETCHES THE RATING BOX ON TOP AND BOTTOM PERFECTLY
+        
+        display: flex;
+        flex-direction: column;     // MAKES THE ELEMENTS HAVE THEIR OWN BLOCK INSTEAD OF DISPLAYING AS INLINE-BLOCK
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__rating-average {
+        font-size: 2.25rem;
+        font-weight: 300;
+        margin-bottom: -.3rem;
+    }
+
+    &__rating-count {
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
 }
