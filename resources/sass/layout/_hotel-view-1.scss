@@ -2,6 +2,7 @@
 /* HOTEL VIEW | LAYOUT / PAGE
 /* ------------------------------------------- */
 
+// CONTAINER HOLDS ALL OF THE CONTENT ON LAYOUT HOTEL VIEW PAGE
 .container {
     max-width: 120rem;
     margin: 8rem auto;
@@ -11,11 +12,12 @@
     min-height: 50rem;
 }
 
+// INCLUDES TOP NAVIGATION AND SIDE BAR
 .header {
     font-size: 1.4rem;
     height: 7rem;
     background-color: var(--color-white);
-    border-bottom: 1px solid var(--color-grey-light-4);
+    border-bottom: var(--line);
 
     display: flex;
     justify-content: space-between;
@@ -37,11 +39,31 @@
     justify-content: space-between;
 }
 
+// HOTEL VIEW. CONTENT INSIDE OF THE NAVIGATIONS
 .hotel-view {
     background-color: var(--color-white);
 
-    // TEST
-    height: 80rem;
-
     flex: 1;
+}
+
+// DETAILS (BACKGROUND), DESCRIPTION OF THE HOTEL AND USER REVIEWS FOR THE HOTEL
+// .details SETUP THE BACKGROUND LAYOUT/BASE LAYOUT FOR HOTEL VIEW CONTENT
+.detail {
+    display: flex;  // MAKES DESCRIPTION AND USER-REVIEWS SIDE BY SIDE 
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-3);
+    border-bottom: var(--line);
+}
+
+.description {
+    font-size: 1.4rem;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    flex: 0 0 60%; // GIVES THE DESCRIPTION TOTAL WIDTH OF 60%
+    margin-right: 4.5rem;
+}
+
+.user-reviews {
+    flex: 1; // MAKES THE USER-REVIEWS TO OCCUPY REMAINING SPACE
 }
