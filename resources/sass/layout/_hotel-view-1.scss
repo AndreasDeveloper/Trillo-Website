@@ -8,8 +8,14 @@
     margin: 8rem auto;
     background-color: var(--color-grey-light-1);
     box-shadow: var(--shadow-dark);
-
     min-height: 50rem;
+
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 // INCLUDES TOP NAVIGATION AND SIDE BAR
@@ -22,10 +28,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    
+    // --- MEDIA QUERIES --- \\
+    @media only screen and(max-width: $bp-smallest) {
+        flex-wrap: wrap;        // MOVES ITEMS BELOW EACH OTHER IN TOP NAVBAR
+        align-content: space-around;
+        height: 11rem;
+    }
 }
 
 .content {
     display: flex;
+
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;     // NAVBAR GETS THE TOP POSITION
+    }
 }
 
 .sidebar {
@@ -49,21 +68,46 @@
 // DETAILS (BACKGROUND), DESCRIPTION OF THE HOTEL AND USER REVIEWS FOR THE HOTEL
 // .details SETUP THE BACKGROUND LAYOUT/BASE LAYOUT FOR HOTEL VIEW CONTENT
 .detail {
+    font-size: 1.4rem;
     display: flex;  // MAKES DESCRIPTION AND USER-REVIEWS SIDE BY SIDE 
     padding: 4.5rem;
     background-color: var(--color-grey-light-3);
     border-bottom: var(--line);
+
+            
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    }
+
+    @media only screen and(max-width: $bp-small) {
+        flex-direction: column;
+    }
 }
 
 .description {
-    font-size: 1.4rem;
     background-color: var(--color-white);
     box-shadow: var(--shadow-light);
     padding: 3rem;
     flex: 0 0 60%; // GIVES THE DESCRIPTION TOTAL WIDTH OF 60%
     margin-right: 4.5rem;
+
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+
+    @media only screen and(max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
 }
 
 .user-reviews {
     flex: 1; // MAKES THE USER-REVIEWS TO OCCUPY REMAINING SPACE
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;    // FIXES THE LENGHT OF THE BORDER-BOTTOM
 }

@@ -2,35 +2,6 @@
 /* BASIC SETUP
 /* ------------------------------------------- */
 
-// CCS3 KIND OF VARIABLES \\
-:root {
-    --color-primary:#eb2f64;
-    --color-primary-light: #ff3366;
-    --color-primary-dark: #ba265d;
-
-    
-    --color-grey-dark-1: #777;
-    --color-grey-dark-2: #999;
-    --color-grey-dark-3: #333;
-
-    --color-grey-light-1: #f7f7f7;
-    --color-grey-light-2: #eee;
-    --color-grey-light-3: #faf9f9;
-    --color-grey-light-4: #f4f2f2;
-    --color-grey-light-5: #949393;
-    --color-grey-light-6: #ccc;
-
-    --color-white: #fff;
-    --color-black: #000;
-
-    // SHADOW BOX VARIABLE
-    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
-    --shadow-light: 0 2rem 5rem rgba(0,0,0, .06);
-    
-    // BORDER BOTTOM VARIABLE
-    --line: 1px solid var(--color-grey-light-4);
-}
-
 *,
 *::after,
 *::before {
@@ -48,6 +19,11 @@ html {
     
     /* DEFINES WHAT REM IS */
     font-size: 62.5%; /* 1rem = 10px | 10px/16px = 62.5% (16px is browser default) */
+
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-large) {
+        font-size: 50%;
+    }
 }
 
 /* ------------------------------------------- */

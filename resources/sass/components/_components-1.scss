@@ -21,6 +21,13 @@
     align-items: center;
     justify-content: center;
 
+    // --- MEDIA QUERIES --- \\
+    @media only screen and(max-width: $bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+        background-color: var(--color-grey-light-1);
+    }
+
     &__input {
         font-family: inherit;
         font-size: inherit;
@@ -136,11 +143,28 @@
     list-style: none;
     margin-top: 3.5rem;
 
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;     // PUTS THE NAV ITEMS SIDE BY SIDE
+        margin: 0;
+    }
+
     &__item {
         position: relative;
 
         &:not(:last-child) {
             margin-bottom: .5rem;
+
+            // --- MEDIA QUERIES --- \\
+            @media only screen and (max-width: $bp-medium) {
+                margin: 0;
+            }
+        }
+
+        
+        // --- MEDIA QUERIES --- \\
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1;    // GIVES THE ABILITY TO NAV ITEMS TO GROW AS MUCH AS THEY CAN
         }
     }
 
@@ -183,6 +207,18 @@
 
             display: flex;
             align-items: center;
+
+                    
+            // --- MEDIA QUERIES --- \\
+            @media only screen and (max-width: $bp-medium) {
+                justify-content: center;
+                padding: 2rem;
+            }
+
+            @media only screen and(max-width: $bp-small) {
+                flex-direction: column;
+                padding: 1.5rem .5rem;
+            }
         }
     }
 
@@ -191,6 +227,14 @@
         height: 1.75rem;
         margin-right: 2rem;
         fill: currentColor;     // COLOR OF PARENT ELEMENT \\
+
+        // --- MEDIA QUERIES --- \\
+        @media only screen and(max-width: $bp-small) {
+            margin-right: 0;
+            margin-bottom: .7rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
 }
 
@@ -204,6 +248,12 @@
     color: var(--color-grey-light-6);
     text-align: center;
     padding: 2.5rem;
+
+    
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
 }
 
 
@@ -236,6 +286,12 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+
+        // --- MEDIA QUERIES --- \\
+        @media only screen and(max-width: $bp-small) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
     }
 
     &__stars {
@@ -271,17 +327,33 @@
         flex-direction: column;     // MAKES THE ELEMENTS HAVE THEIR OWN BLOCK INSTEAD OF DISPLAYING AS INLINE-BLOCK
         align-items: center;
         justify-content: center;
+
+        // --- MEDIA QUERIES --- \\
+        @media only screen and(max-width: $bp-small) {
+            padding: 0 1.5rem;
+        }
     }
 
     &__rating-average {
         font-size: 2.25rem;
         font-weight: 300;
         margin-bottom: -.3rem;
+
+        // --- MEDIA QUERIES --- \\
+        @media only screen and(max-width: $bp-small) {
+            font-size: 1.8rem;
+        }
     }
 
     &__rating-count {
         font-size: .8rem;
         text-transform: uppercase;
+
+        
+        // --- MEDIA QUERIES --- \\
+        @media only screen and(max-width: $bp-small) {
+            font-size: .5rem;
+        }
     }
 }
 
@@ -348,7 +420,7 @@
     }
 
     &__friends {
-
+        display: flex;
     }
 
     &__photo {
@@ -359,7 +431,101 @@
         border: .3rem solid var(--color-white);
 
         &:not(:last-child) {
-            margin-right: -1.5rem;
+            margin-right: -2rem;
         }
+    }
+}
+
+/* ------------------------------------------- */
+// USER REVIEWS 
+/* ------------------------------------------- */
+
+.review {
+
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    overflow: hidden;
+
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    &__text {
+        margin-bottom: 2rem;
+        z-index: 10;
+        position: relative;
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+    }
+
+    &__photo {
+        height: 4.5rem;
+        width: 4.5rem;
+        border-radius: 50%;
+        margin-right: 1.5rem;
+    }
+
+    &__user-box {
+        margin-right: auto;     // PUSHES RATING TO THE RIGHT SIDE WHILE USER INFO IS INTACT \\
+    }
+
+    &__user-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: .4rem;
+    }
+
+    &__user-date {
+        font-size: 1rem;
+        color: var(--color-grey-dark-1);
+    }
+
+    &__rating {
+        color: var(--color-primary);
+        font-size: 2.2rem;
+        font-weight: 300;
+    }
+
+    // SETS UP THE QUOTATION SYMBOL
+    &::before {
+        content: "\201C";       // OPEN QUOTE SYMBOL
+        position: absolute;
+        top: -2.75rem;
+        left: -1rem;
+        line-height: 1;
+        font-size: 20rem;
+        color: var(--color-grey-light-4);
+        font-family: sans-serif;
+        z-index: 1;
+    }
+}
+
+/* ------------------------------------------- */
+// CTA
+/* ------------------------------------------- */
+
+.cta {
+    padding: 3.5rem 0;
+    text-align: center;
+
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2.5rem 0;
+    }
+
+    &__book-now {
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
     }
 }
